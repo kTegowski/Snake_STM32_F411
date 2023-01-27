@@ -1,0 +1,107 @@
+/*
+ * snake.c
+ *
+ *  Created on: 26 lis 2022
+ *      Author: ktego
+ */
+#include "ST7735.h"
+#include "GFX_FUNCTIONS.h"
+#include <stdio.h>
+#include <stdlib.h>
+int snakeBody[384];
+int bodyIndex;
+int xApplePosition;
+int yApplePosition;
+extern TIM_HandleTypeDef htim2;
+void snakeInit(){
+	snakeBody[0]= 34;
+	snakeBody[1]= 100;
+	snakeBody[2]= 24;
+	snakeBody[3]= 100;
+	snakeBody[4]= 14;
+	snakeBody[5]= 100;
+	bodyIndex = 3;
+}
+void drawSnake(){
+	for(int i = 0; i< bodyIndex*2; i = i+2){
+		fillRect(snakeBody[i], snakeBody[i+1], 10, 10, BLUE);
+	}
+}
+void moveSnake(){
+	fillRect(snakeBody[(bodyIndex*2)-2], snakeBody[(bodyIndex*2)-1], 10, 10, GREEN);
+			 for(int i = (bodyIndex*2)-1; i > 1; i= i -1){
+			 		 snakeBody[i] = snakeBody[i-2];
+			 	 }
+}
+
+void goingLeft(){
+	moveSnake();
+	snakeBody[0] = snakeBody[0]-10;
+
+}
+void goingRight(){
+	moveSnake();
+	snakeBody[0] = snakeBody[0]+10;
+}
+void goingUp(){
+	moveSnake();
+	snakeBody[1] = snakeBody[1]-10;
+}
+void goingDown(){
+	moveSnake();
+	snakeBody[1] = snakeBody[1]+10;
+}
+int checkIfHitWall(){
+	if(snakeBody[0] == 4 || snakeBody[0] == 124 || snakeBody[1] == 0 || snakeBody[1] == 160  ){
+			return 1;
+	}
+	return 0;
+}
+void checkIfAppleWasEatan(){
+	if(abs(snakeBody[0]-xApplePosition) < 10 && abs(snakeBody[1]-yApplePosition)<10){
+		fillRect(xApplePosition, yApplePosition, 10, 10, BLUE);
+		bodyIndex++;
+		snakeBody[(bodyIndex*2)-1]=snakeBody[(bodyIndex*2)-3];
+		snakeBody[(bodyIndex*2)-2]=snakeBody[(bodyIndex*2)-4];
+		xApplePosition = random_int(4,110)+4;
+		yApplePosition = random_int(0,150);
+		drawApple(xApplePosition,yApplePosition);
+	}
+}
+
+void initApple(){
+	xApplePosition = random_int(4,120)+4;
+	yApplePosition = random_int(0,160);
+	//TO-DO algortm sprawdzania czy nie wygenerowałes jabłka na węzu
+	drawApple(xApplePosition,yApplePosition);
+}
+int random_int(int min, int max)
+
+/*
+ * Funkcja odpowiedzialna za generacje pozycji jabłka, zwraca pseudolosowa wartość,
+ * z zadnego przedziału. Wygenerowana wartość musi być wielokrotnością 10.
+ *
+ */
+{
+	int returnValue = min + rand() % (max+1 - min);
+	returnValue = returnValue + (10-returnValue%10);
+   return returnValue;
+}
+
+void move(int destinationFlag){
+	switch(destinationFlag)
+	{
+	case 0:
+		goingDown();
+		break;
+	case 1:
+		goingRight();
+		break;
+	case 2:
+		goingLeft();
+		break;
+	case 3:
+		goingUp();
+		break;
+	}
+}

@@ -1,0 +1,175 @@
+10:58:48 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  28848	    544	   3816	  33208	   81b8	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+10:58:54 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-size   Snake_game.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28848	    544	   3816	  33208	   81b8	Snake_game.elf
+Finished building: default.size.stdout
+ 
+11:02:06 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/readGesture.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/readGesture.d" -MT"Core/Src/readGesture.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/readGesture.o"
+arm-none-eabi-gcc "../Core/Src/snake.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/snake.d" -MT"Core/Src/snake.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/snake.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+../Core/Src/snake.c: In function 'checkIfAppleWasEatan':
+../Core/Src/snake.c:66:20: warning: implicit declaration of function 'random_int'; did you mean 'random'? [-Wimplicit-function-declaration]
+   66 |   xApplePosition = random_int(4,110)+4;
+      |                    ^~~~~~~~~~
+      |                    random
+../Core/Src/readGesture.c: In function 'initGesture':
+../Core/Src/readGesture.c:23:10: warning: unused variable 'test4' [-Wunused-variable]
+   23 |  uint8_t test4 = test1<<7 | test1 << 6;
+      |          ^~~~~
+../Core/Src/readGesture.c:22:10: warning: unused variable 'test3' [-Wunused-variable]
+   22 |  uint8_t test3 = test1<<4 | test1 << 5;
+      |          ^~~~~
+../Core/Src/readGesture.c:21:10: warning: unused variable 'test2' [-Wunused-variable]
+   21 |  uint8_t test2 = test | test1 << 7;
+      |          ^~~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  29096	    544	   3816	  33456	   82b0	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+11:03:46 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  29096	    544	   3816	  33456	   82b0	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+11:05:00 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  29096	    544	   3816	  33456	   82b0	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+11:07:47 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  29096	    544	   3816	  33456	   82b0	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+11:09:12 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+../Core/Src/main.c:215:43: error: 'Font_13x23' undeclared (first use in this function); did you mean 'Font_16x26'?
+  215 |       ST7735_WriteString(25,60, "SCORE:", Font_13x23, YELLOW,BLACK);
+      |                                           ^~~~~~~~~~
+      |                                           Font_16x26
+../Core/Src/main.c:215:43: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:09:31 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+../Core/Src/main.c:215:43: error: 'Font_13x18' undeclared (first use in this function); did you mean 'Font_11x18'?
+  215 |       ST7735_WriteString(25,60, "SCORE:", Font_13x18, YELLOW,BLACK);
+      |                                           ^~~~~~~~~~
+      |                                           Font_11x18
+../Core/Src/main.c:215:43: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:10:36 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  32520	    552	   3816	  36888	   9018	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 
+11:11:19 **** Incremental Build of configuration Debug for project Snake_game ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  210 |      itoa(scoreInt,score,10);
+      |      ^~~~
+arm-none-eabi-gcc -o "Snake_game.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\ktego\Desktop\Elektronika PW\5 semestr\WSYW\Lab\wsyw-22z-103-konrad-tegowski\Projekt\Snake_game\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Snake_game.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Snake_game.elf
+ 
+arm-none-eabi-size   Snake_game.elf 
+arm-none-eabi-objdump -h -S  Snake_game.elf  > "Snake_game.list"
+   text	   data	    bss	    dec	    hex	filename
+  32520	    552	   3816	  36888	   9018	Snake_game.elf
+Finished building: default.size.stdout
+ 
+Finished building: Snake_game.list
+ 

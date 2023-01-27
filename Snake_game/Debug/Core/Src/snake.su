@@ -1,0 +1,13 @@
+../Core/Src/snake.c:16:6:snakeInit	4	static
+../Core/Src/snake.c:25:6:drawSnake	24	static
+../Core/Src/snake.c:30:6:moveSnake	24	static
+../Core/Src/snake.c:37:6:goingLeft	8	static
+../Core/Src/snake.c:42:6:goingRight	8	static
+../Core/Src/snake.c:46:6:goingUp	8	static
+../Core/Src/snake.c:50:6:goingDown	8	static
+../Core/Src/snake.c:54:5:checkIfHitWall	4	static
+../Core/Src/snake.c:60:6:checkIfAppleWasEatan	16	static
+../Core/Src/snake.c:72:6:initApple	8	static
+../Core/Src/snake.c:78:5:random_int	24	static
+../Core/Src/snake.c:90:5:getBodyIndex	4	static
+../Core/Src/snake.c:93:6:move	16	static

@@ -1,0 +1,13 @@
+void snakeInit();
+void drawSnake();
+void moveSnake();
+void goingLeft();
+void goingRight();
+void goingUp();
+void goingDown();
+void checkIfAppleWasEatan();
+void initApple();
+int random_int(int min, int max);
+int checkIfHitWall();
+int getBodyIndex();
+void move(int destinationFlag);

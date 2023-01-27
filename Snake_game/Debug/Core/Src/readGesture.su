@@ -1,0 +1,3 @@
+../Core/Src/readGesture.c:18:6:initGesture	40	static
+../Core/Src/readGesture.c:67:6:readGesture	32	static
+../Core/Src/readGesture.c:87:5:decodeGesture	16	static

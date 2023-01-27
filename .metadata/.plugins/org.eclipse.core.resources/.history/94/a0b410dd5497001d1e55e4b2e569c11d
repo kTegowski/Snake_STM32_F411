@@ -1,0 +1,19 @@
+/*
+ * keyboard.c
+ *
+ *  Created on: Jan 18, 2023
+ *      Author: ktego
+ */
+#include "main.h"
+#include <stdio.h>
+#include "stm32f4xx_hal.h"
+
+void us_delay(uint32_t time,TIM_HandleTypeDef htim5 ){
+	HAL_TIM_Base_Start(&htim5);
+		htim5.Instance->CNT = 0;
+		while (htim5.Instance->CNT < time) {};
+	    HAL_TIM_Base_Stop(&htim5);
+}
+uint32_t keyboardRead(){
+
+}

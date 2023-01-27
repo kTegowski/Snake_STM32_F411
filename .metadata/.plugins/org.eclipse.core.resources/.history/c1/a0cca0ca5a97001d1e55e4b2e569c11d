@@ -1,0 +1,37 @@
+/*
+ * keyboard.c
+ *
+ *  Created on: Jan 18, 2023
+ *      Author: ktego
+ */
+#include "main.h"
+#include <stdio.h>
+#include "stm32f4xx_hal.h"
+
+void us_delay(uint32_t time,TIM_HandleTypeDef *htim ){
+	HAL_TIM_Base_Start(htim);
+		htim->Instance->CNT = 0;
+		while (htim->Instance->CNT < time) {};
+	    HAL_TIM_Base_Stop(htim);
+}
+//PB12
+uint32_t keyboardRead(TIM_HandleTypeDef *htim){
+	uint32_t res = 0;
+	if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13) == 0) {
+		printf("Wszedłem do funkcji \n");
+			  us_delay(20,htim);
+			  res = 0;
+			  for(int i=0;i<16;i++) {
+				  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 1);
+				  us_delay(4,htim);
+				  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 0);
+				  us_delay(4,htim);
+	 			  res = (res << 1) | HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13);
+			  }
+
+			  us_delay(2000,htim);
+			  printf("%ld \n",res);
+		}
+
+	return res;
+}
